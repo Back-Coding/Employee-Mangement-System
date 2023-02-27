@@ -50,5 +50,11 @@ namespace Employees_Mangement_System.Controllers
 
             return View();
         }
+        public ActionResult PasswordForgotten()
+        {
+            ViewBag.Message = "Your PasswordForgotten page.";
+
+            return View();
+        }
     }
 }
