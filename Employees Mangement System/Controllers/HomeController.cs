@@ -56,5 +56,19 @@ namespace Employees_Mangement_System.Controllers
 
             return View();
         }
+        public ActionResult Register(TblPassenger tblEmployees)
+        {
+            using (EFlightDataEntities db = new EFlightDataEntities())
+            {
+                if (ModelState.IsValid)
+                {
+                    db.TblPassengers.Add(tblPassenger);
+                    db.SaveChanges();
+                    ViewBag.message("Registartion Sucessfully");
+                    ModelState.Clear();
+                }
+            }
+            return View(tblPassenger);
+        }
     }
 }
